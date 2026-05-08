@@ -1,7 +1,9 @@
 .form {
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin: 0 auto;
 }
 
 .formGroup {
@@ -10,6 +12,7 @@
     font-size: 14px;
     font-weight: 500;
     color: #212529;
+   
 }
 
 .input,

@@ -43,41 +43,43 @@ export default function NoteForm() {
   return (
     <form onSubmit={handleSubmit} className={css.form}>
       <div className={css.formGroup}>
-        <label>
-          Title
-          <input
-            value={draft.title}
-            onChange={handleChange}
-            type="text"
-            name="title"
-            className={css.input}
-          />
-        </label>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          value={draft.title}
+          onChange={handleChange}
+          type="text"
+          name="title"
+          className={css.input}
+        />
       </div>
 
       <div className={css.formGroup}>
-        <label>
-          Content
-          <textarea
-            value={draft.content}
-            onChange={handleChange}
-            name="content"
-            className={css.textarea}
-          ></textarea>
-        </label>
+        <label htmlFor="content">Content</label>
+        <textarea
+          id="content"
+          value={draft.content}
+          onChange={handleChange}
+          name="content"
+          className={css.textarea}
+        ></textarea>
       </div>
 
       <div className={css.formGroup}>
-        <label>
-          Categories
-          <select value={draft.tag} onChange={handleChange} name="tag">
-            {tags.map((item) => (
-              <option key={item} value={item} className={css.select}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </label>
+        <label htmlFor="tag">Categories</label>
+        <select
+          id="tag"
+          value={draft.tag}
+          onChange={handleChange}
+          name="tag"
+          className={css.select}
+        >
+          {tags.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className={css.actions}>

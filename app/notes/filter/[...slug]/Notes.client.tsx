@@ -8,6 +8,8 @@ import NoteList from "@/components/NoteList/NoteList";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
 
+import css from "./NotePageClient.module.css";
+
 type Props = {
   tag?: string;
 };
@@ -28,14 +30,18 @@ export default function NotesClient({ tag }: Props) {
     <>
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error loading notes. Please try again.</p>}
-      <Link href={`/notes/action/create`}>Create notes</Link>
-      <SearchBox
-        search={search}
-        onSearch={(value: string) => {
-          setSearch(value);
-          setPage(1);
-        }}
-      />
+      <div className={css.toolbar}>
+        <Link href={`/notes/action/create`} className={css.createLink}>
+          Create notes
+        </Link>
+        <SearchBox
+          search={search}
+          onSearch={(value: string) => {
+            setSearch(value);
+            setPage(1);
+          }}
+        />
+      </div>
       <Pagination
         page={page}
         totalPages={data?.totalPages || 1}

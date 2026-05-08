@@ -1,0 +1,17 @@
+.layout {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+}
+
+/* ліва колонка */
+.sidebar {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+/* права колонка */
+.content {
+    flex: 1;
+    min-width: 0;
+}
