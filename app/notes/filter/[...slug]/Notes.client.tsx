@@ -3,6 +3,7 @@ import { useState } from "react";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useDebounce } from "use-debounce";
 import { fetchNotes } from "@/lib/api";
+import Link from "next/link";
 import NoteList from "@/components/NoteList/NoteList";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
@@ -27,7 +28,7 @@ export default function NotesClient({ tag }: Props) {
     <>
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error loading notes. Please try again.</p>}
-
+      <Link href={`/notes/action/create`}>Create notes</Link>
       <SearchBox
         search={search}
         onSearch={(value: string) => {
