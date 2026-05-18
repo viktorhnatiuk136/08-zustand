@@ -2,10 +2,10 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
 
-.menuItem {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .menuLink {
@@ -20,4 +20,18 @@
 .menuLink:hover {
   background-color: #444;
   color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .menuList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+    .menuLink {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
 }

@@ -15,3 +15,16 @@
     flex: 1;
     min-width: 0;
 }
+
+/* mobile */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
